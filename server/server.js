@@ -30,7 +30,7 @@ app.use( bodyParser.urlencoded({ extended : false }) );
 app.use(cors());
 
 //enable morgan for DEV
-app.use(morgan('combined'));
+//app.use(morgan('combined'));
 
 //connect to mongodb
 mongoose.connect('mongodb://localhost/hospital'); //mongoose will create the database if it doesn't exist
@@ -49,7 +49,7 @@ app.use(bodyParser.json());//we want to parse json data and attach it to the req
 app.use(routes); //use the routes we specified in api file
 //app.use('/api',routes); //use the routes with /api in front of normal routes
 //app.use('/login', routes );
-app.use('/secret', passport.authenticate('jwt', { session : false }), routes);
+//app.use('/secret', passport.authenticate('jwt', { session : false }), routes);
 
 //we add error handling middleware next
 app.use(function(err, req, res, next) {

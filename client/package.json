@@ -11,13 +11,7 @@
     "react-native": "^0.61.5",
     "react-native-router-flux": "^4.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
-  },
-  {
-  "author": "Jakub Velfl",
-  "license": "Private Use",
-  "bugs": {
-    "url": ""
+    "react-scripts": "3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,7 +36,11 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.0.3",
     "storyboard": "^3.2.1",
     "storyboard-listener-console": "^3.1.4"
-  }
+  },
+  "author": "Jakub Velfl",
+  "License": "Private use"
 }

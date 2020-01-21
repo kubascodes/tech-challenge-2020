@@ -5,8 +5,6 @@ import LoginForm from './LoginForm';
 import { saveAs } from 'file-saver';
 import {JSONToCSV, Parser, parseAsync } from "json2csv";
 
-import createReport from 'docx-templates';
-
 class PatientDisplay extends React.Component {
     constructor(props) {
       super(props);
