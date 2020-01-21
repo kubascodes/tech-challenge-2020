@@ -46,8 +46,6 @@ const NotesSchema = new Schema({
 
 //WE CREATE A MODEL -> mongoose pluralises the data table patient_data -> patient_datas
  const Patient = mongoose.model('patient', PatientSchema); //Patient objects are saved in the patient database
- /*const UserData = mongoose.model('user_data', UserSchema);*/
 
 //EXPORT THE MODEL SO WE CAN ACCESS IT ELSEWHERE
  module.exports = Patient;
- /*module.exports = UserData;*/
