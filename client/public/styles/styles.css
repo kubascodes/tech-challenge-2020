@@ -1,0 +1,42 @@
+body {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+.center {
+  text-align: center;
+}
+
+
+
+#img-homepage {
+  content: url('../assets/cc_logo.png');
+  height: 300px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#small-icon {
+  content: url('../assets/cc_small.png');
+  width: 40px;
+  display: block;
+  height: auto;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+.loginForm {
+}
