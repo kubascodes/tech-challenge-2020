@@ -52,3 +52,8 @@ Steps to set-up the app:
 2. Data is validated on the client before submission and then again on the server to ensure it is correct.
 3. The data sent from the client should be available in the `body` of the request to that it can be read by the `body-parser` package.
 4. All data transfers are carried by requests and responses in `JSON` format.
+
+### Dependencies
+0. The dependencies used by the app enable various functionality.
+1. The app is designed to implement features as microservices.
+2. Therefore when you decide to remove a dependency, you might need to remove a feature.
