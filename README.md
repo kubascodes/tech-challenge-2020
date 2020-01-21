@@ -22,15 +22,15 @@ Steps to set-up the app:
 ### API Routes
 
 #### APIs secured with JWT tokens (only available to logged in users)
-1. `GET "/patients"` to get a list of patients from the database. the route accepts search params for first_name and last_name
-2. `POST "/patients"` to add a new patient record to the database
-3. `PUT "/patients/:id"` to update a patient record in the database
-4. `DELETE "/patients/:id"` to delete a patient record in the database
-5. `POST "/signup"` to signup a new user -> only if admin
+1. `GET "/patients"` to get a list of patients from the database. This route accepts search params for first_name and last_name and sends back a match if there is one.
+2. `POST "/patients"` to add a new patient record to the database. The data has to be put in `req.body` in the format defined by the **Data Model**
+3. `PUT "/patients/:id"` to update a patient record in the database. The request has to have a valid patient id and the response is the updated patient object according to the **Data Model** in case of success. Otherwise error code is sent.
+4. `DELETE "/patients/:id"` to delete a patient record in the database. The request has to have a valid patient id and the response is the deleted patient object according to the **Data Model** in case of success. Otherwise error code is sent. 
+5. `POST "/signup"` to signup a new user -> only if admin. Sends a response with *Signup successful* or *Signup failed* message to the client.
 6. `GET "/profile"` to view and edit your own profile
 
 #### APIs that authenticate users against the local user account system
-1. `POST "/login"` to handle login and issue a JWT token
+1. `POST "/login"` to handle login and issue a JWT token that is sent to the client in the response object.
 
 ### Security
 0. All requests are handled by the authentication service, which uses local accounts implementation of **Passport.js and JWT tokens**.
@@ -46,3 +46,9 @@ Steps to set-up the app:
 2. **React.js** runs on the front-end, to allow for dynamic content loading, to prevent unnecessary data requests and to handle interaction with the user (events, actions, redirects, routing) according to the industry standards.
 3. On the back-end, we're using the fast **Express.js** server to handle incoming requests from React.js, but also to allow authorized users to access our API from 3rd party applications. This functionality is possible, but we keep it disabled at the moment as it is subject to data privacy protection laws.
 4. Data is stored in **MongoDB** according to schemas available in the models folder. There is a schema for users and patients, specifying the required fields. We connect to MongoDB via the Mongoose driver.
+
+### Data Modelling
+1. Data model is available in `/models` folder and schemas are defined for both users and patients. Datatypes are defined to prevent users from inserting malicious code.
+2. Data is validated on the client before submission and then again on the server to ensure it is correct.
+3. The data sent from the client should be available in the `body` of the request to that it can be read by the `body-parser` package.
+4. All data transfers are carried by requests and responses in `JSON` format.
